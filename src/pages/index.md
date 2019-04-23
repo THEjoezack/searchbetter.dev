@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: Search Better!
-image: /img/andrew-neel-133200-unsplash.jpg
+image: /img/krissana-porto-445840-unsplash.jpg
 heading: You've come to the right place!
 subheading: Tips and How-To's for the Elastic Stack
 mainpitch:
