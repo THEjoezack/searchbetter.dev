@@ -1,14 +1,17 @@
 @import "~bulma/sass/utilities/initial-variables"
 
 // Config vars
-// Kaldi logo brand color: #FD461E
-$kaldi-red: #D64000
-$kaldi-red-invert: #fff
+$theme-1: #61892F
+$theme-2: #86C232
+$theme-3: #222629
+$theme-4: #474B4F
+$theme-5: #6B6E70
+$theme-2-invert: $theme-5
 
-$primary: $kaldi-red
-$primary-invert: $kaldi-red-invert
+$primary: $theme-2
+$primary-invert: $theme-2-invert
 $body-color: #333
-$black: #2b2523
+$black: #222629
 
 .navbar .navbar-menu
   box-shadow:none !important
@@ -61,10 +64,10 @@ $black: #2b2523
     border-radius: .25rem
     text-decoration: none
     font-weight: 700
-    color: #CC3700
+    color: $theme-2
     text-align: center
-    -webkit-box-shadow: inset 0 0 0 2px #CC3700
-    box-shadow: inset 0 0 0 2px #f40
+    -webkit-box-shadow: inset 0 0 0 2px $theme-2
+    box-shadow: inset 0 0 0 2px $theme-2
     -webkit-transition: all .15s ease
     transition: all .15s ease
 
@@ -88,9 +91,9 @@ footer.footer
 $menu-item-color: $white-ter
 $menu-item-hover-color: $black !important
 $menu-item-hover-background-color: $black
-$menu-item-active-color: $kaldi-red-invert
-$menu-item-active-background-color:	$kaldi-red-invert
-$menu-list-border-left: 1px solid $kaldi-red-invert
+$menu-item-active-color: $theme-2-invert
+$menu-item-active-background-color:	$theme-2-invert
+$menu-list-border-left: 1px solid $theme-2-invert
 $menu-label-color: $white-ter
 
 
