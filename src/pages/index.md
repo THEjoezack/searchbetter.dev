@@ -1,23 +1,15 @@
 ---
 templateKey: index-page
-title: 'Search Better, Dev'
+title: Search Better!
 image: /img/andrew-neel-133200-unsplash.jpg
-heading: 'Yeah, I do that with my stupidness.'
-subheading: 'Tips, Tricks, and How-To''s for the Elastic Stack'
+heading: You've come to the right place!
+subheading: Tips and How-To's for the Elastic Stack
 mainpitch:
-  title: 'Bender, we''re trying our best.'
+  title: Master the Elastic API
   description: >-
-    Bender, this is Fry's decision… and he made it wrong. So it's time for us to
-    interfere in his life. Bender, hurry! This fuel's expensive! Also, we're
-    dying! Noooooo! Bender, we're trying our best.
-
-
-    I'm Santa Claus!
-
-    Who are those horrible orange men?
-
-    That could be 'my' beautiful soul sitting naked on a couch. If I could just
-    learn to play this stupid thing.
+    Want to master the Elasticsearch API? Write queries quickly, that run
+    quickly? Sling advanced filtering, aggregation, and scripting queries like a
+    modern day Merlin? 
 description: >-
   Kaldi is the ultimate spot for coffee lovers who want to learn about their
   java’s origin and support the farmers that grew it. We take coffee production,
