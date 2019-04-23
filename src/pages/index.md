@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: 'Search Better, Dev'
-image: /img/markus-spiske-1381441-unsplash.jpg
+image: /img/andrew-neel-133200-unsplash.jpg
 heading: 'Yeah, I do that with my stupidness.'
 subheading: 'Tips, Tricks, and How-To''s for the Elastic Stack'
 mainpitch:
