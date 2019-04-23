@@ -1,16 +1,23 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience
-image: /img/home-jumbotron.jpg
-heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
+title: 'Search Better, Dev'
+image: /img/markus-spiske-1381441-unsplash.jpg
+heading: 'Yeah, I do that with my stupidness.'
+subheading: 'Tips, Tricks, and How-To''s for the Elastic Stack'
 mainpitch:
-  title: Why Kaldi
-  description: >
-    Kaldi is the coffee store for everyone who believes that great coffee
-    shouldn't just taste good, it should do good too. We source all of our beans
-    directly from small scale sustainable farmers and make sure part of the
-    profits are reinvested in their communities.
+  title: 'Bender, we''re trying our best.'
+  description: >-
+    Bender, this is Fry's decision… and he made it wrong. So it's time for us to
+    interfere in his life. Bender, hurry! This fuel's expensive! Also, we're
+    dying! Noooooo! Bender, we're trying our best.
+
+
+    I'm Santa Claus!
+
+    Who are those horrible orange men?
+
+    That could be 'my' beautiful soul sitting naked on a couch. If I could just
+    learn to play this stupid thing.
 description: >-
   Kaldi is the ultimate spot for coffee lovers who want to learn about their
   java’s origin and support the farmers that grew it. We take coffee production,
@@ -68,3 +75,4 @@ main:
     alt: Coffee beans
     image: /img/products-grid1.jpg
 ---
+
