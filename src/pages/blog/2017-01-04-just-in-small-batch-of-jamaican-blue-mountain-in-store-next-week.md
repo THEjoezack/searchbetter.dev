@@ -1,33 +1,95 @@
 ---
-templateKey: 'blog-post'
-title: 'Just in: small batch of Jamaican Blue Mountain in store next week'
+templateKey: blog-post
+title: 3 Reasons not to use the URI Search
 date: 2017-01-04T15:04:10.000Z
 description: >-
-  We’re proud to announce that we’ll be offering a small batch of Jamaica Blue
-  Mountain coffee beans in our store next week.
+  There are two main ways of querying data in Elasticsearch. The URI Search is
+  simple and convenient, and the Query DSL is verbose but powerful. In this
+  post, we'll look at the pros and cons of each, and I'll tell you why you
+  should just stick to the Query DSL.
 tags:
-  - jamaica
-  - green beans
-  - flavor
-  - tasting
+  - elasticsearch
 ---
+## Show me the ways!
+Here is a sample [URI Search](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-uri-request.html) that is querying for podcasts with the title of "[Coding Blocks](https://www.codingblocks.net)":
 
-We expect the shipment of a limited quantity of green beans next Monday. We’ll be offering the roasted beans from Tuesday, but quantities are limited, so be quick.
+```bash
+# URI Search version
+GET /podcasts/_search?q=title:"Coding Blocks"
+```
 
-Blue Mountain Peak is the highest mountain in Jamaica and one of the highest peaks in the Caribbean at 7,402 ft. It is the home of Blue Mountain coffee and their famous tours. It is located on the border of the Portland and Saint Thomas parishes of Jamaica.
+As a human being (really, I assure you - why would you even think otherwise? Don't worry about it!) I find this request easy on the eyes and the [fingers](https://www.hanselman.com/blog/DoTheyDeserveTheGiftOfYourKeystrokes.aspx).
 
-## A little history
+The [Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html) version of this query isn't so bad really but it does involve quite a few brackets, and you need to know a bit more about how the API works in order to write it:
 
-The Blue Mountains are considered by many to be a hiker's and camper's paradise. The traditional Blue Mountain trek is a 7-mile hike to the peak and consists of a 3,000-foot increase in elevation. Jamaicans prefer to reach the peak at sunrise, thus the 3–4 hour hike is usually undertaken in darkness. Since the sky is usually very clear in the mornings, Cuba can be seen in the distance.
+```bash
+# Query DSL version
+GET /podcasts/_search
+{
+  "query": {
+    "match": {
+      "title": "Coding Blocks"
+    }
+  }
+}
+```
 
->Some of the plants found on the Blue Mountain cannot be found anywhere else in the world and they are often of a dwarfed sort.
 
-This is mainly due to the cold climate which inhibits growth. The small coffee farming communities of Claverty Cottage and Hagley Gap are located near the peak.
+## What is good about URI Search?
+What happens if you need to make a change? Say, I want to check for podcasts titled either "Coding Blocks" or "[MS Dev Show](https://msdevshow.com/)"?
 
-## What you need to know before trying
+Again, the URI Search is dead simple:
 
-Jamaican Blue Mountain Coffee or Jamaica Blue Mountain Coffee is a classification of coffee grown in the Blue Mountains of Jamaica. The best lots of Blue Mountain coffee are noted for their mild flavor and lack of bitterness. Over the past few decades, this coffee has developed a reputation that has made it one of the most expensive and sought-after coffees in the world. Over 80% of all Jamaican Blue Mountain Coffee is exported to Japan. In addition to its use for brewed coffee, the beans are the flavor base of Tia Maria coffee liqueur.
+```bash
+# URI Search version
+GET /podcasts/_search?q=title:"Coding Blocks" OR title:"MS Dev Show"
+```
 
-Jamaican Blue Mountain Coffee is a globally protected certification mark, meaning only coffee certified by the Coffee Industry Board of Jamaica can be labeled as such. It comes from a recognized growing region in the Blue Mountain region of Jamaica, and its cultivation is monitored by the Coffee Industry Board of Jamaica.
+But the Query DSL version has morphed. In addition to sprouting new brackets, you also have to introduce some additional property nesting. Yikes!
 
-The Blue Mountains are generally located between Kingston to the south and Port Antonio to the north. Rising 7,402 ft, they are some of the highest mountains in the Caribbean. The climate of the region is cool and misty with high rainfall. The soil is rich, with excellent drainage. This combination of climate and soil is considered ideal for coffee.
+```bash
+# Query DSL version
+GET /podcasts/_search
+{
+  "query": {
+    "bool": {
+      "should": [
+        {
+          "match": {
+            "title": "Coding Blocks"
+          }
+        },
+        {
+          "match": {
+            "title": "MS Dev Show"
+          }
+        }
+      ]
+    }
+  }
+}
+````
+
+So what's good about the Query URI version? It's simple and eloquent for simple and eloquent queries. It's quite powerful too, it supports all the same advanced features as the [Query String Query](https://www.elastic.co/guide/en/elasticsearch/reference/6.7/query-dsl-query-string-query.html) and there are even [18 other parameters](https://www.elastic.co/guide/en/elasticsearch/reference/6.7/search-uri-request.html) you can pass to fine tune your results.
+
+Not too shabby, but...
+
+## What's not good about the URI search?
+
+Here's a list of reasons I came up with for you to avoid using the URI search for anything but the laziest of curls.
+
+#### 1. It gets ugly
+
+As your queries get more advanced, the URI Search doesn't hold up very well. The syntax that's so simple and eloquent to begin with eventually starts to get harder and harder to read as you add conditions...and lets not forget what those 18 parameters would look like if you actually set them all.
+
+#### 2. The capabilities are limited
+
+More importantly, there are things you just can't do in the URI Search. The Elasticsearch query API is full of advanced features, like [aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html), and [scripting](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-script-fields.html), and [Geo fencing](https://www.elastic.co/guide/en/elasticsearch/reference/current/geo-queries.html) that you just can't do.
+
+#### 3. Little to no tooling support
+Tools like [Kibana](https://www.elastic.co/products/kibana) or libraries like [Nest](https://github.com/elastic/elasticsearch-net) take advantage of the rigid-ish structure of json to offer nice intellisense and strong-ish typing around the Elastic API that help protect you from mistakes and ultimately save time. The URI Search skirks these rules, so these tools aren't available
+
+## But what if I love URI Searches?
+That's fine. Ultimately I think it's more valuable to start with, and stay with, the Query DSL. If you prefer the terse syntax and expressiveness of the Query String, and you've made your piece with the fact that you may have to rewrite that query then I wish you the best of luck.
+
+Good luck.
