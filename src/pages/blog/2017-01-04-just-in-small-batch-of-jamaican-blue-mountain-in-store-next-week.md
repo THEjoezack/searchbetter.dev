@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: 3 Reasons not to use the URI Search
-date: 2017-01-04T15:04:10.000Z
+date: 2018-04-03T14:04:00.000Z
 description: >-
   There are two main ways of querying data in Elasticsearch. The URI Search is
   simple and convenient, and the Query DSL is verbose but powerful. In this
