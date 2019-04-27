@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: Elasticsearch is not just for search!
 canonical: 'https://www.codingblocks.net/programming/elasticsearch-is-not-just-for-search/'
-date: 2019-01-27T02:55:00.000Z
+date: 2019-01-02T02:55:00.000Z
 description: >-
 
   Elasticsearch is often described as an open-source, scalable, full-text search
