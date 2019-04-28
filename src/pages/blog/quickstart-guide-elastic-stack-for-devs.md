@@ -16,6 +16,8 @@ tags:
 
 Elasticsearch is an open-source, scalable, full-text search and analytics engine. It is used for a variety of purposes, from [Full Text Search, to E-Commerce, to Real-Time Analytics](https://searchbetter.dev/blog/elasticsearch-is-not-just-for-search/). It is frequently associated with big organizations and big data, but Elastic did a great job with their default configurations so it's easy for smaller projects as well.
 
+![Screenshot of Elastic Stack with developer blog data](/img/elasticsearch-quickstart-complete.png "The results: Elastic Stack running with dev blog data")
+
 In this guide, we're going to spin up a basic Elastic Stack (formerly known as the "ELK Stack") that brings together a few different open-source services that were designed to work together. Here is a high level description of those services:
 
 **Elasticsearch** is a persistence engine and API layer.
@@ -61,7 +63,6 @@ Now let's add a couple input configurations. Each "input" block represents one R
 
 You can see the inputs are some of my favorite blogs, configured to poll once an hour. The output sets up a basic index called "blogs" that will hold the data.
 
-
 <details><summary>Expand for config/logstash.conf</summary>
 
 ```
@@ -101,6 +102,7 @@ output {
   }
 }
 ```
+
 </details>
 
 That's it, Logstash will take care of everything else. Next time we restart our environment, Logstash will start polling and importing the feed data.
@@ -121,17 +123,17 @@ Give Elasticsearch a minute to breathe after docker-compose is running, and try 
 Everything is setup now, so it's time for you to do a bit of exploring.
 
 If you are new to the Elastic Stack, I recommend getting acquainted with Kibana first. It's already running on your computer: <http://localhost:5601>
-.
 
 Head over to the "dev tools" and give a few of these queries a shot so you can get a taste of what Elastic has to offer.
 
 <details><summary>Expand for sample queries</summary>
+
 ```
 # Simple filter: Get the top 5 posts about JavaScript in the last year
 GET /blogs/_search?q=JavaScript&size=5
   "query": {
     "bool": {
-      "must": [
+      "must": \[
         {
           "range": {
             "published": {
@@ -145,6 +147,7 @@ GET /blogs/_search?q=JavaScript&size=5
 }
 
 # Simple aggregate: posts by date
+
 GET /blogs/_search?size=0
 {
   "aggs":{
@@ -158,11 +161,12 @@ GET /blogs/_search?size=0
 }
 
 # Combination aggregate/filters: Top 10 results for Elasticsearch, with results and counts by author
+
 GET /blogs/_search
 {
   "query": {
     "bool": {
-      "must": [
+      "must": \[
         {
           "match": {
             "message": "Elasticsearch"
@@ -179,6 +183,7 @@ GET /blogs/_search
     }
   }
 }
+
 ```
 </details>
 
@@ -188,3 +193,4 @@ Here are a couple suggestions for what to do now that you've got Elastic Stack u
 * Explore the [Search](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html) and [Aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html)
    APIs
 * [Create visualizations with Kibana](https://www.elastic.co/guide/en/kibana/current/visualize.html)
+```
