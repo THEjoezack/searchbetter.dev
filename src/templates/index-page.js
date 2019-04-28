@@ -23,7 +23,7 @@ export const IndexPageTemplate = ({
           image.childImageSharp ? image.childImageSharp.fluid.src : image
         })`,
         backgroundColor: '#222629',
-        backgroundPosition: `top left`,
+        backgroundPosition: `top center`,
         backgroundAttachment: `fixed`
       }}
     >
@@ -40,7 +40,8 @@ export const IndexPageTemplate = ({
         <h1
           className='has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen'
           style={{
-            color: '#86C232',
+            color: '#005571',
+            backgroundColor: 'white',
             lineHeight: '1',
             padding: '0.25em'
           }}
@@ -71,7 +72,7 @@ export const IndexPageTemplate = ({
                   </div>
                   <div className='tile'>{mainpitch.description}</div>
                 </div>
-                <div className='columns'>
+                <div className='columns' style={{ padding: '60px 0 0 0' }}>
                   <div className='column is-12'>
                     <h3 className='has-text-weight-semibold is-size-4'>
                       {heading}

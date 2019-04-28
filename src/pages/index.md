@@ -1,20 +1,19 @@
 ---
 templateKey: index-page
 title: Search Better!
-image: /img/andrew-neel-133200-unsplash.jpg
-subheading: Tips and How-To's for the Elastic Stack
+image: /img/hero-background.jpg
+subheading: Mastering the API, one blog at a time
 mainpitch:
-  title: Master the Elastic API
+  title: All about the Elasticsearch API
   description: >-
-    Want to master the Elasticsearch API? Write queries quickly, that run
-    quickly? Sling advanced filtering, aggregation, and scripting queries like a
-    modern day Merlin? 
+    Write queries quickly, that run quickly? Sling advanced filtering, aggregation,
+    and scripting queries like a modern day Merlin? 
 heading: You've come to the right place!
 description: 'Stay tuned for Elastic tips, tricks and how-to''s.'
 intro:
   blurbs:
     - image: /img/coffee-gear.png
-      text: Want to know more about Elasticsearch? Check out the <a href="/blog" />
+      text: Want to know more about Elasticsearch? Check out the blog
     - image: /img/coffee.png
       text: 'We do videos too, check us out on YouTube.'
     - image: /img/favicon-32x32.png
