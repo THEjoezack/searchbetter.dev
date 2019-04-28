@@ -193,4 +193,3 @@ Here are a couple suggestions for what to do now that you've got Elastic Stack u
 * Explore the [Search](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html) and [Aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html)
    APIs
 * [Create visualizations with Kibana](https://www.elastic.co/guide/en/kibana/current/visualize.html)
-```
