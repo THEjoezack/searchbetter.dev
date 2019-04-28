@@ -50,46 +50,60 @@ RUN bin/logstash-plugin install logstash-input-rss
 COPY logstash/logstash.conf /usr/share/logstash/pipeline/logstash.conf
 ```
 
-Now let's add a couple input configurations. Each "input" block represents one RSS feed that will be imported into Elasticsearch every 3600 seconds. Add the following lines (some of my favorite dev.to blogs!) to the top of the config/logstash.conf and Logstash will take care of the rest.
+Now let's add a couple input configurations. Each "input" block represents one RSS feed that will be imported into Elasticsearch every 3600 seconds. Replace the config/logstash.conf file contents with the following lines and Logstash will take care of the rest.
 
-```
-input: {
-  url: https://dev.to/feed/davefollett,
-  interval: 3600
+You can see the inputs are some of my favorite blogs, configured to poll once an hour. The output sets up a basic index called "blogs" that will hold the data.
+
+```input {
+
+  rss {
+    url => https =>//dev.to/feed/davefollett,
+    interval => 3600
+  }
+
+  rss {
+    url => https =>//dev.to/feed/dance2die,
+    interval => 3600
+  }
+
+  rss {
+    url => https =>//dev.to/feed/kritner,
+    interval => 3600
+  }
+
+  rss {
+    url => https =>//dev.to/feed/molly_struve,
+    interval => 3600
+  }
+
+  rss {
+    url => https =>//dev.to/feed/rionmonster,
+    interval => 3600
+  }
+
+  rss {
+    url => https =>//dev.to/feed/thejoezack
+    interval => 3600
+  }
 }
 
-input: {
-  url: https://dev.to/feed/dance2die,
-  interval: 3600
-}
-
-input: {
-  url: https://dev.to/feed/kritner,
-  interval: 3600
-}
-
-input: {
-  url: https://dev.to/feed/molly_struve,
-  interval: 3600
-}
-
-input: {
-  url: https://dev.to/feed/rionmonster,
-  interval: 3600
-}
-
-input: {
-  url: https://dev.to/feed/thejoezack
-  interval: 3600
+output {
+  elasticsearch {
+    action => "index"
+    index => "blogs"
+    hosts => "elasticsearch:9200"
+    document_id => "%{[link]}"
+  }
 }
 ```
 
 That's it, Logstash will take care of everything else. Next time we restart our environment, Logstash will start polling and importing the feed data.
 
-Restart your environment:
+Stop, re-build, and restart your environment:
 
 ```bash
 docker-compose down
+docker-compose build
 docker-compose up -d
 ```
 
