@@ -6,6 +6,11 @@ description: >-
   This guide will step you through getting a basic Elastic Stack up and running
   with data in just a few minutes. This environment won't be secured or tuned
   for production, but it's a great place to start.
+tags:
+  - Elasticsearch
+  - Kibana
+  - Logstash
+  - Docker
 ---
 ## About the Elastic Stack
 Elasticsearch is an open-source, scalable, full-text search and analytics engine. It is used for a variety of purposes, from [Full Text Search, to E-Commerce, to Real-Time Analytics](https://searchbetter.dev/blog/elasticsearch-is-not-just-for-search/). It is frequently associated with big organizations and big data, but Elastic did a great job with their default configurations so it's easy for smaller projects as well.
@@ -49,7 +54,7 @@ Now let's add a couple input configurations. Each "input" block represents one R
 
 ```
 input: {
-  url: https://dev.to/feed/davefollett
+  url: https://dev.to/feed/davefollett,
   interval: 3600
 }
 
@@ -106,9 +111,3 @@ Here are a couple suggestions for what to do now that you've got Elastic Stack u
 * Build a simple website that lets you browse and search for your favorite blogs.
 * Explore the [Search](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html) and [Aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html) APIs
 * [Create visualizations with Kibana](https://www.elastic.co/guide/en/kibana/current/visualize.html)
-
-
-
-
-
-
