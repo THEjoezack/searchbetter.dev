@@ -10,6 +10,8 @@ tags:
   - elasticsearch
   - TIL
 ---
+I ran into an situation where an Elastic URI Search with no field prefix gave me decent looking results, but I didn't know how those results we gathered so I did a bit of documentation diving and learned a couple new things!
+
 ## That was weird...
 There are two main ways of querying data in Elasticsearch.
 
