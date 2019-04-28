@@ -47,7 +47,7 @@ docker-compose up -d
 Give Elasticsearch a few seconds to catch it's breath after it starts up and then you can verify it's status by hitting this url a browser: [https://localhost:9200
 ](https://localhost:9200)
 
-Congratulations, you have the Elastic stack running on you computer!
+![Screenshot of successful status message](/img/200-status.png "Congratulations, you have the Elastic stack running on you computer!")
 
 ## \#2: Import data
 
