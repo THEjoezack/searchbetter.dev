@@ -61,6 +61,9 @@ Now let's add a couple input configurations. Each "input" block represents one R
 
 You can see the inputs are some of my favorite blogs, configured to poll once an hour. The output sets up a basic index called "blogs" that will hold the data.
 
+
+<details><summary>Expand for config/logstash.conf</summary>
+
 ```
 input {
   rss {
@@ -98,6 +101,7 @@ output {
   }
 }
 ```
+</details>
 
 That's it, Logstash will take care of everything else. Next time we restart our environment, Logstash will start polling and importing the feed data.
 
@@ -121,6 +125,7 @@ If you are new to the Elastic Stack, I recommend getting acquainted with Kibana 
 
 Head over to the "dev tools" and give a few of these queries a shot so you can get a taste of what Elastic has to offer.
 
+<details><summary>Expand for sample queries</summary>
 ```
 # Simple filter: Get the top 5 posts about JavaScript in the last year
 GET /blogs/_search?q=JavaScript&size=5
@@ -175,6 +180,7 @@ GET /blogs/_search
   }
 }
 ```
+</details>
 
 Here are a couple suggestions for what to do now that you've got Elastic Stack up and running
 
