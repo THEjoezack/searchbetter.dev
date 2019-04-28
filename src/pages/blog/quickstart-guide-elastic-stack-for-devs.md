@@ -36,7 +36,7 @@ If your are on Windows, then I recommend using the Linux containers (default) an
 
 The first step is to create a docker-compose.yml file that describes how your services fit together. I'm aiming for speed over depth in this guide so I have already created this for you.
 
-Simple clone the repository and fire up the Elastic Stack:
+Simply clone the repository and fire up the Elastic Stack:
 
 ```
 git clone https://github.com/codingblocks/simplified-elastic-stack.git
@@ -126,10 +126,10 @@ If you are new to the Elastic Stack, I recommend getting acquainted with Kibana 
 
 Head over to the "dev tools" and give a few of these queries a shot so you can get a taste of what Elastic has to offer.
 
-<details><summary>Expand for sample queries</summary>
+#### Sample queries
 
+Simple filter, top 5 posts about JavaScript in the last year
 ```
-# Simple filter: Get the top 5 posts about JavaScript in the last year
 GET /blogs/_search?q=JavaScript&size=5
   "query": {
     "bool": {
@@ -145,9 +145,10 @@ GET /blogs/_search?q=JavaScript&size=5
     }
   }
 }
+```
 
-# Simple aggregate: posts by date
-
+Simple aggregate, posts by date
+```
 GET /blogs/_search?size=0
 {
   "aggs":{
@@ -159,9 +160,10 @@ GET /blogs/_search?size=0
     }
   }
 }
+```
 
-# Combination aggregate/filters: Top 10 results for Elasticsearch, with results and counts by author
-
+Combination aggregate/filters: Top 10 results for Elasticsearch, with results and counts by author
+```
 GET /blogs/_search
 {
   "query": {
@@ -185,7 +187,6 @@ GET /blogs/_search
 }
 
 ```
-</details>
 
 Here are a couple suggestions for what to do now that you've got Elastic Stack up and running
 
