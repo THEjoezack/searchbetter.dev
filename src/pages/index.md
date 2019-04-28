@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: Search Better!
-image: /img/andrew-neel-133200-unsplash.jpg
+image: /img/hero-background.jpg
 subheading: Tips and How-To's for the Elastic Stack
 mainpitch:
   title: Master the Elastic API
