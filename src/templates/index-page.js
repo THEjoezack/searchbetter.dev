@@ -71,7 +71,7 @@ export const IndexPageTemplate = ({
                   </div>
                   <div className='tile'>{mainpitch.description}</div>
                 </div>
-                <div className='columns'>
+                <div className='columns' style={{ padding: '60px 0 0 0' }}>
                   <div className='column is-12'>
                     <h3 className='has-text-weight-semibold is-size-4'>
                       {heading}
