@@ -43,11 +43,10 @@ Congratulations, you have the Elastic stack running on you computer!
 
 ## #2: Import data
 
-Now we'll use Logstash to import data. The repo you cloned above already has a custom Dockerfile.Logstash file, so lets add an input plugin that can import [RSS](https://www.copyblogger.com/what-the-heck-is-rss/) feeds. All you have to do is add the middle line to Dockerfile.Logstash so that it looks like this:
+Now we'll use Logstash to import data. The repo you cloned above already has a custom Dockerfile.Logstash file, so lets add an input plugin that can import [RSS](https://www.copyblogger.com/what-the-heck-is-rss/) feeds. All you have to do is add the second line to Dockerfile.Logstash so that it looks like this:
 
-```FROM docker.elastic.co/logstash/logstash-oss:7.0
+```FROM docker.elastic.co/logstash/logstash-oss:7.0.0
 RUN bin/logstash-plugin install logstash-input-rss
-COPY logstash/logstash.conf /usr/share/logstash/pipeline/logstash.conf
 ```
 
 Now let's add a couple input configurations. Each "input" block represents one RSS feed that will be imported into Elasticsearch every 3600 seconds. Replace the config/logstash.conf file contents with the following lines and Logstash will take care of the rest.
@@ -57,32 +56,32 @@ You can see the inputs are some of my favorite blogs, configured to poll once an
 ```input {
 
   rss {
-    url => https =>//dev.to/feed/davefollett,
+    url => https://dev.to/feed/davefollett
     interval => 3600
   }
 
   rss {
-    url => https =>//dev.to/feed/dance2die,
+    url => https://dev.to/feed/dance2die
     interval => 3600
   }
 
   rss {
-    url => https =>//dev.to/feed/kritner,
+    url => https://dev.to/feed/kritner
     interval => 3600
   }
 
   rss {
-    url => https =>//dev.to/feed/molly_struve,
+    url => https://dev.to/feed/molly_struve
     interval => 3600
   }
 
   rss {
-    url => https =>//dev.to/feed/rionmonster,
+    url => https://dev.to/feed/rionmonster
     interval => 3600
   }
 
   rss {
-    url => https =>//dev.to/feed/thejoezack
+    url => https://dev.to/feed/thejoezack
     interval => 3600
   }
 }
@@ -107,7 +106,7 @@ docker-compose build
 docker-compose up -d
 ```
 
-Give Elasticsearch a minute to breathe after docker-compose is running, and try hitting this url in the browser to see that you have data: [http://localhost:9200/_search](http://localhost:9200/_search)
+Give Elasticsearch a minute to breathe after docker-compose is running, and try hitting this url in the browser to see that you have data: [http://localhost:9200/blogs/_search](http://localhost:9200/blogs/_search)
 
 ## #3: Have fun!
 Everything is setup now, so it's time for you to do a bit of exploring.
@@ -116,8 +115,59 @@ If you are new to the Elastic Stack, I recommend getting acquainted with Kibana 
 
 Head over to the "dev tools" and give a few of these queries a shot so you can get a taste of what Elastic has to offer.
 
-```bash
-TODO
+```
+# Simple filter: Get the top 5 posts about JavaScript in the last year
+GET /blogs/_search?q=JavaScript&size=5
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "range": {
+            "published": {
+              "gte" : "now-1y/y",
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
+# Simple aggregate: posts by date
+GET /blogs/_search?size=0
+{
+  "aggs":{
+    "posts by date":{
+      "date_histogram":{
+        "field":"published",
+        "interval":"year"
+      }
+    }
+  }
+}
+
+# Combination aggregate/filters: Top 10 results for Elasticsearch, with results and counts by author
+GET /blogs/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "message": "Elasticsearch"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "author": {
+      "terms": {
+        "field": "author.keyword"
+      }
+    }
+  }
+}
 ```
 
 Here are a couple suggestions for what to do now that you've got Elastic Stack up and running
