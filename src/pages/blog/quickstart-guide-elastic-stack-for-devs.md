@@ -36,7 +36,8 @@ The first step is to create a docker-compose.yml file that describes how your se
 
 Simple clone the repository and fire up the Elastic Stack:
 
-```git clone https://github.com/codingblocks/simplified-elastic-stack.git
+```
+git clone https://github.com/codingblocks/simplified-elastic-stack.git
 cd simplified-elastic-stack
 docker-compose up -d
 ```
@@ -50,7 +51,8 @@ Congratulations, you have the Elastic stack running on you computer!
 
 Now we'll use Logstash to import data. The repo you cloned above already has a custom Dockerfile.Logstash file, so lets add an input plugin that can import [RSS](https://www.copyblogger.com/what-the-heck-is-rss/) feeds. All you have to do is add the second line to Dockerfile.Logstash so that it looks like this:
 
-```FROM docker.elastic.co/logstash/logstash-oss:7.0.0
+```
+FROM docker.elastic.co/logstash/logstash-oss:7.0.0
 RUN bin/logstash-plugin install logstash-input-rss
 ```
 
@@ -59,32 +61,28 @@ Now let's add a couple input configurations. Each "input" block represents one R
 
 You can see the inputs are some of my favorite blogs, configured to poll once an hour. The output sets up a basic index called "blogs" that will hold the data.
 
-```input {
+```
+input {
   rss {
     url => https://dev.to/feed/davefollett
     interval => 3600
   }
-
   rss {
     url => https://dev.to/feed/dance2die
     interval => 3600
   }
-
   rss {
     url => https://dev.to/feed/kritner
     interval => 3600
   }
-
   rss {
     url => https://dev.to/feed/molly_struve
     interval => 3600
   }
-
   rss {
     url => https://dev.to/feed/rionmonster
     interval => 3600
   }
-
   rss {
     url => https://dev.to/feed/thejoezack
     interval => 3600
@@ -105,7 +103,7 @@ That's it, Logstash will take care of everything else. Next time we restart our 
 
 Stop, re-build, and restart your environment:
 
-```bash
+```
 docker-compose down
 docker-compose build
 docker-compose up -d
