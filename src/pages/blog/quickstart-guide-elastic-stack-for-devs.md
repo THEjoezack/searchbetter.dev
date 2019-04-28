@@ -88,6 +88,10 @@ input {
     interval => 3600
   }
   rss {
+    url => https://dev.to/feed/TheInfraDev
+    interval => 3600
+  }
+  rss {
     url => https://dev.to/feed/thejoezack
     interval => 3600
   }
