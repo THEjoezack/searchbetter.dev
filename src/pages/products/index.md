@@ -1,33 +1,28 @@
 ---
 templateKey: product-page
-title: Products
+title: Projects
 image: /img/jumbotron.jpg
-heading: 'All Elasticsearch, All the time'
+heading: Search based Projects
 description: >-
-  We are working really hard to bring you the best developer-focused
-  Elasticsearch content. No fluff, no filler, just great content.
+  Check out some of the search based projects I've had the pleasure to be a part
+  of.
 intro:
   blurbs:
     - image: /img/coffee.png
-      text: >
-        We sell green and roasted coffee beans that are sourced directly from
-        independent farmers and farm cooperatives. We’re proud to offer a
-        variety of coffee beans grown with great care for the environment and
-        local communities. Check our post or contact us directly for current
-        availability.
+      text: >-
+        QIT.cloud is a programmer focused podcast discovery service that lets
+        you search, queue, and play episodes by topic.
     - image: /img/coffee-gear.png
-      text: >
-        We offer a small, but carefully curated selection of brewing gear and
-        tools for every taste and experience level. No matter if you roast your
-        own beans or just bought your first french press, you’ll find a gadget
-        to fall in love with in our shop.
+      text: >-
+        DevPodcasts.App is another podcast discovery service, but this one is
+        geared more towards helping people find podcasts (as opposed to
+        episodes) by topic.
     - image: /img/tutorials.png
-      text: >
-        Love a great cup of coffee, but never knew how to make one? Bought a
-        fancy new Chemex but have no clue how to use it? Don't worry, we’re here
-        to help. You can schedule a custom 1-on-1 consultation with our baristas
-        to learn anything you want to know about coffee roasting and brewing.
-        Email us or call the store for details.
+      text: >-
+        FindTech.events is a developer conference discovery service. It's still
+        in it's early days, but the idea is that you will be able to search for
+        conferences by topic, date, location, and whether or not the conference
+        is currently accepting call-for-proposals.
     - image: /img/meeting-space.png
       text: >
         We believe that good coffee has the power to bring people together.
@@ -35,12 +30,8 @@ intro:
         space where you can hang out with fellow coffee lovers and learn about
         coffee making techniques. All of the artwork on display there is for
         sale. The full price you pay goes to the artist.
-  heading: What we offer
-  description: >
-    Kaldi is the ultimate spot for coffee lovers who want to learn about their
-    java’s origin and support the farmers that grew it. We take coffee
-    production, roasting and brewing seriously and we’re glad to pass that
-    knowledge to anyone. This is an edit via identity...
+  heading: Open Source Projects
+  description: Read more about some of our open source projects.
 main:
   heading: Great coffee with no compromises
   description: >
