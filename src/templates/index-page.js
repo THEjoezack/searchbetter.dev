@@ -13,7 +13,8 @@ export const IndexPageTemplate = ({
   subheading,
   mainpitch,
   description,
-  intro
+  intro,
+  allYoutubeVideo
 }) => (
   <div>
     <div
@@ -80,11 +81,39 @@ export const IndexPageTemplate = ({
                     <p>{description}</p>
                   </div>
                 </div>
-                <Features gridItems={intro.blurbs} />
+                <div className='column is-12'>
+                  <h3 className='has-text-weight-semibold is-size-2'>
+                    Latest videos
+                  </h3>
+                </div>
+                <div className='columns is-multiline'>
+                  {allYoutubeVideo.map(v => (
+                    <div key={v.node.videoId} className='column is-6'>
+                      <section className='section'>
+                        <div className='has-text-centered'>
+                          <a
+                            href={`https://www.youtube.com/watch?v=${
+                              v.node.videoId
+                            }`}
+                          >
+                            <img
+                              src={
+                                v.node.localThumbnail.childImageSharp.fluid.src
+                              }
+                              alt={`${v.node.title} thumbnail`}
+                            />
+                          </a>
+                        </div>
+                        <p>{v.node.title}</p>
+                      </section>
+                    </div>
+                  ))}
+                </div>
+                {/* <Features gridItems={intro.blurbs} /> */}
                 <div className='columns'>
                   <div className='column is-12 has-text-centered'>
                     <Link className='btn' to='/products'>
-                      See all products
+                      See all videos
                     </Link>
                   </div>
                 </div>
@@ -117,12 +146,13 @@ IndexPageTemplate.propTypes = {
   description: PropTypes.string,
   intro: PropTypes.shape({
     blurbs: PropTypes.array
-  })
+  }),
+  videos: PropTypes.array
 }
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
-
+  const { allYoutubeVideo } = data
   return (
     <Layout>
       <IndexPageTemplate
@@ -133,6 +163,7 @@ const IndexPage = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
+        allYoutubeVideo={allYoutubeVideo.edges}
       />
     </Layout>
   )
@@ -180,6 +211,25 @@ export const pageQuery = graphql`
           }
           heading
           description
+        }
+      }
+    }
+    allYoutubeVideo(limit: 4) {
+      edges {
+        node {
+          id
+          title
+          description
+          videoId
+          publishedAt
+          privacyStatus
+          localThumbnail {
+            childImageSharp {
+              fluid(maxWidth: 240, quality: 64) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }

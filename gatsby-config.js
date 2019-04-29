@@ -30,6 +30,14 @@ module.exports = {
         name: 'images'
       }
     },
+    {
+      resolve: `gatsby-source-youtube-v2`,
+      options: {
+        channelId: 'UCuhHLykoneeYM_qxReRpuJA',
+        apiKey: 'AIzaSyDZboYjQwTnR4mp6h3lN0iF4B5xCOaoYNQ',
+        maxVideos: 50 // Defaults to 50
+      }
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
