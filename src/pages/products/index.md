@@ -1,14 +1,11 @@
 ---
-templateKey: 'product-page'
-path: /products
-title: Our Coffee
+templateKey: product-page
+title: Products
 image: /img/jumbotron.jpg
-heading: Great coffee with a conscience
+heading: 'All Elasticsearch, All the time'
 description: >-
-  Kaldi is the ultimate spot for coffee lovers who want to learn about their
-  java’s origin and support the farmers that grew it. We take coffee production,
-  roasting and brewing seriously and we’re glad to pass that knowledge to
-  anyone.
+  We are working really hard to bring you the best developer-focused
+  Elasticsearch content. No fluff, no filler, just great content.
 intro:
   blurbs:
     - image: /img/coffee.png
@@ -99,3 +96,4 @@ pricing:
       plan: Custom
       price: '??'
 ---
+
