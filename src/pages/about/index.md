@@ -10,4 +10,4 @@ I simply can't stop talking about the things I love, which includes search engin
 I'd love to hear any feedback you have for me over on [Twitter](https://twitter.com/THEjoezack).
 
 ## Oh yeah, about the site
-Search Better is dedicated to bringing you dev-centered content all about Elasticsearch.
+SearchBetter.dev is dedicated to bringing you dev-centered content all about search engines like Elasticsearch.
