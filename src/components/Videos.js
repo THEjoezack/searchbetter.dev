@@ -6,21 +6,12 @@ const VideoGrid = ({ gridItems }) => (
   <div className='columns is-multiline'>
     {gridItems.map(item => (
       <div key={item.videoId} className='column is-6'>
-        <section className='section'>
-          <div className='has-text-centered'>
-            <div
-              style={{
-                width: '240px',
-                display: 'inline-block'
-              }}
-            >
-              <a href={`https://www.youtube.com/watch?v=${item.videoId}`}>
-                <PreviewCompatibleImage imageInfo={item} />
-              </a>
-            </div>
-          </div>
-          <a href={item.videoId}>{item.title}</a>
-        </section>
+        <div className='has-text-centered'>
+          <a href={`https://www.youtube.com/watch?v=${item.videoId}`}>
+            <PreviewCompatibleImage imageInfo={item} />
+          </a>
+        </div>
+        <a href={item.videoId}>{item.title}</a>
       </div>
     ))}
   </div>

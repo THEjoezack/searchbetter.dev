@@ -82,34 +82,41 @@ export const IndexPageTemplate = ({
                     <p>{description}</p>
                   </div>
                 </div>
-                <div className='column is-12'>
-                  <h3 className='has-text-weight-semibold is-size-2'>
-                    Featured videos
-                  </h3>
+                <div className='columns' style={{ padding: '60px 0 0 0' }}>
+                  <div className='column is-12'>
+                    <h3 className='has-text-weight-semibold is-size-2'>
+                      Featured videos
+                    </h3>
+                  </div>
                 </div>
                 <Videos gridItems={videos} />
-                <div className='column is-12'>
-                  <h3 className='has-text-weight-semibold is-size-2'>
-                    Featured Projects
-                  </h3>
-                </div>
-                <Features gridItems={projects.blurbs} />
-                <div className='columns'>
+
+                {/* <div className='columns'>
                   <div className='column is-12 has-text-centered'>
-                    <Link className='btn' to='/projects'>
+                    <Link className='btn' to='/videos'>
                       See all projects
                     </Link>
                   </div>
+                </div> */}
+                <div className='columns' style={{ padding: '60px 0 0 0' }}>
+                  <div className='column is-12'>
+                    <h3 className='has-text-weight-semibold is-size-2'>
+                      Featured Projects
+                    </h3>
+                  </div>
                 </div>
-                <div className='column is-12'>
-                  <h3 className='has-text-weight-semibold is-size-2'>
-                    Latest stories
-                  </h3>
-                  <BlogRoll />
-                  <div className='column is-12 has-text-centered'>
-                    <Link className='btn' to='/blog'>
-                      Read more
-                    </Link>
+                <Features gridItems={projects.blurbs} />
+                <div className='columns' style={{ padding: '60px 0 0 0' }}>
+                  <div className='column is-12'>
+                    <h3 className='has-text-weight-semibold is-size-2'>
+                      Latest stories
+                    </h3>
+                    <BlogRoll />
+                    <div className='column is-12 has-text-centered'>
+                      <Link className='btn' to='/blog'>
+                        Read more
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -216,7 +223,7 @@ export const pageQuery = graphql`
       }
     }
     projects: markdownRemark(
-      frontmatter: { templateKey: { eq: "project-page" } }
+      frontmatter: { templateKey: { eq: "projects-page" } }
     ) {
       frontmatter {
         intro {
@@ -244,7 +251,7 @@ export const pageQuery = graphql`
           privacyStatus
           localThumbnail {
             childImageSharp {
-              fluid(maxWidth: 240, quality: 64) {
+              fluid(maxWidth: 480, quality: 64) {
                 ...GatsbyImageSharpFluid
               }
             }
