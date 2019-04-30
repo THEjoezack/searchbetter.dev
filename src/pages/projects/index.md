@@ -1,5 +1,5 @@
 ---
-templateKey: product-page
+templateKey: project-page
 title: Projects
 image: /img/jumbotron.jpg
 heading: Search based Projects

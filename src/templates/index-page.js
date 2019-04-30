@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Features from '../components/Features'
+import Videos from '../components/Videos'
 import BlogRoll from '../components/BlogRoll'
 
 export const IndexPageTemplate = ({
@@ -13,8 +14,8 @@ export const IndexPageTemplate = ({
   subheading,
   mainpitch,
   description,
-  intro,
-  allYoutubeVideo
+  videos,
+  projects
 }) => (
   <div>
     <div
@@ -83,37 +84,20 @@ export const IndexPageTemplate = ({
                 </div>
                 <div className='column is-12'>
                   <h3 className='has-text-weight-semibold is-size-2'>
-                    Latest videos
+                    Featured videos
                   </h3>
                 </div>
-                <div className='columns is-multiline'>
-                  {allYoutubeVideo.map(v => (
-                    <div key={v.node.videoId} className='column is-6'>
-                      <section className='section'>
-                        <div className='has-text-centered'>
-                          <a
-                            href={`https://www.youtube.com/watch?v=${
-                              v.node.videoId
-                            }`}
-                          >
-                            <img
-                              src={
-                                v.node.localThumbnail.childImageSharp.fluid.src
-                              }
-                              alt={`${v.node.title} thumbnail`}
-                            />
-                          </a>
-                        </div>
-                        <p>{v.node.title}</p>
-                      </section>
-                    </div>
-                  ))}
+                <Videos gridItems={videos} />
+                <div className='column is-12'>
+                  <h3 className='has-text-weight-semibold is-size-2'>
+                    Featured Projects
+                  </h3>
                 </div>
-                {/* <Features gridItems={intro.blurbs} /> */}
+                <Features gridItems={projects.blurbs} />
                 <div className='columns'>
                   <div className='column is-12 has-text-centered'>
-                    <Link className='btn' to='/products'>
-                      See all videos
+                    <Link className='btn' to='/projects'>
+                      See all projects
                     </Link>
                   </div>
                 </div>
@@ -147,23 +131,37 @@ IndexPageTemplate.propTypes = {
   intro: PropTypes.shape({
     blurbs: PropTypes.array
   }),
+  projects: PropTypes.shape({
+    blurbs: PropTypes.array
+  }),
   videos: PropTypes.array
 }
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
-  const { allYoutubeVideo } = data
+  const indexFrontMatter = data.index.frontmatter
+  const projectsFrontMatter = data.projects.frontmatter
+
+  const videos = data.allYoutubeVideo.edges
+    .map(e => e.node)
+    .map(n => {
+      return {
+        videoId: n.videoId,
+        title: n.title,
+        image: n.localThumbnail
+      }
+    })
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
-        allYoutubeVideo={allYoutubeVideo.edges}
+        image={indexFrontMatter.image}
+        title={indexFrontMatter.title}
+        heading={indexFrontMatter.heading}
+        subheading={indexFrontMatter.subheading}
+        mainpitch={indexFrontMatter.mainpitch}
+        description={indexFrontMatter.description}
+        intro={indexFrontMatter.intro}
+        projects={projectsFrontMatter.intro}
+        videos={videos}
       />
     </Layout>
   )
@@ -171,7 +169,10 @@ const IndexPage = ({ data }) => {
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
+    index: PropTypes.shape({
+      frontmatter: PropTypes.object
+    }),
+    projects: PropTypes.shape({
       frontmatter: PropTypes.object
     })
   })
@@ -181,7 +182,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+    index: markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
         image {
@@ -211,6 +212,24 @@ export const pageQuery = graphql`
           }
           heading
           description
+        }
+      }
+    }
+    projects: markdownRemark(
+      frontmatter: { templateKey: { eq: "project-page" } }
+    ) {
+      frontmatter {
+        intro {
+          blurbs {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 240, quality: 64) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            text
+          }
         }
       }
     }
