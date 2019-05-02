@@ -14,6 +14,8 @@ Eventually I would love to aggregate this data but in the meantime, you'll have 
 
 [Elastic Videos and Webinars](https://www.elastic.co/videos/)
 
+[Latest Podcasts](https://qit.cloud/search/elasticsearch)
+
 [Latest Stackoverflow Questions](https://stackoverflow.com/questions/tagged/elasticsearch)
 
 [Most Relevant YouTube Videos](https://www.youtube.com/results?search_query=Elasticsearch)
