@@ -23,7 +23,7 @@ Below is a short description of my biggest ta
 
 
 
-\## Matching is done on the tokenized terms
+## Matching is done on the tokenized terms
 
 
 
@@ -35,7 +35,8 @@ You can see what the regular expressions run against for a given string by runni
 
 
 
-\`\``POST _analyze
+```
+POST /_analyze
 
 {
 
@@ -43,7 +44,8 @@ You can see what the regular expressions run against for a given string by runni
 
   "text": “This text will get tokenized"
 
-}\`\``
+}
+```
 
 
 
@@ -51,13 +53,13 @@ If you run this query, you can see that the string gets broken up into tokens: �
 
 
 
-There is a workaround if you store or copy the full string to an unanalyzed text field. You can read more about that solution \[here](http://www.ethanjoachimeldridge.info/tech-blog/elastic-search-regular-expressions-against-whole-string)
+There is a workaround if you store or copy the full string to an unanalyzed text field. You can read more about that solution [here](http://www.ethanjoachimeldridge.info/tech-blog/elastic-search-regular-expressions-against-whole-string)
 
 
 
 
 
-\## Elasticsearch regular expressions are not fully \[Perl Compatible](https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions)
+## Elasticsearch regular expressions are not fully [Perl Compatible](https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions)
 
 Elasticsearch is missing some of the regex features common in other languages. The two most noticeable to me are shorthand characters like \d and \s and lookaheads.
 
@@ -67,11 +69,11 @@ That said, there is still a lot you can do. There are too many capabilities to l
 
 
 
-\[Read more about Elasticsearch’s regular expressions.](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-regexp-query.html#regexp-syntax)
+[Read more about Elasticsearch’s regular expressions.](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-regexp-query.html#regexp-syntax)
 
 
 
-\## Wildcard matchers are slow
+## Wildcard matchers are slow
 
 The documentation offers a few warnings about performance, advising you to use a long prefix before your regular expression starts and avoiding large wildcard searches.
 
@@ -91,6 +93,6 @@ max_regex_length (default 1000)
 
 
 
-\## Conclusion
+## Conclusion
 
 I learned a few things when I was reading up about regular expressions in Elasticsearch, and I hope you did too. I would love to hear about anything interesting or weird you learned while working with them.
