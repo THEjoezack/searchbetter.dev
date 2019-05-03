@@ -27,7 +27,7 @@ Below is a short description of my biggest ta
 
 
 
-Here is the key sentence from the documentation: "Elasticsearch will apply the regexp to the terms produced by the tokenizer for that field, and not to the original text of the field.”. This means that regular expressions only work against the [tokenizer}(https://www.elastic.co/guide/en/elasticsearch/reference/7.0/analysis-tokenizers.html) results of the text field you are querying against.
+Here is the key sentence from the documentation: "Elasticsearch will apply the regexp to the terms produced by the tokenizer for that field, and not to the original text of the field.”. This means that regular expressions only work against the [tokenizer](https://www.elastic.co/guide/en/elasticsearch/reference/7.0/analysis-tokenizers.html) results of the text field you are querying against.
 
 
 
