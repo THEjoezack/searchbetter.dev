@@ -25,7 +25,7 @@ Requires [node](https://nodejs.org/en/) and [bash](https://www.gnu.org/software/
 ## 0. Grab the scripts from Github
 
 ```bash
-git clone https://github.com/codingblocks/git-to-elasticsearch
+git clone https://github.com/codingblocks/git-to-elasticsearch.git
 ```
 
 ## 1. Export git history in json-ish format
@@ -89,7 +89,7 @@ A: Try converting the file to ascii
 
 In dos:
 
-```dos
+```bash
 cmd /c /a type history.txt>history.txt
 cmd /c /a type files.txt>files.txt
 ```
