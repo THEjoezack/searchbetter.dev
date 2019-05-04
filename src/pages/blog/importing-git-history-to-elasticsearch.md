@@ -10,6 +10,10 @@ tags:
   - Git
   - Project
 ---
+![Tag Cloud for DEV.TO](/img/tagcloud.png "Tag Cloud for DEV.TO")
+
+![]()
+
 Roll up your sleeves! This following steps are not pretty, though they are simple. 
 
 > Cleaning things up and releasing them in a tidy package would be a great project for somebody!
