@@ -1,8 +1,8 @@
 ---
 templateKey: index-page
-title: Analytics.CodingBlocks
+title: Analytics.CodingBlocks.Net
 image: /img/hero-background.jpg
-subheading: 'Better Search, Logging and Analytics'
+subheading: 'Better Searching, Logging and Analytics'
 mainpitch:
   title: All about the Elasticsearch API
   description: >-
