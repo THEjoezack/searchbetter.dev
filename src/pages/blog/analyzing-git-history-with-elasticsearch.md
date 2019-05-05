@@ -21,17 +21,21 @@ Now I can run simple queries like this to see things like how many commits were 
 
 ![Query for Commits by Author in Kibana Dev Tools](/img/devtools.png "Query for Commits by Author in Kibana Dev Tools")
 
-
 That's nice and all, but I'd prefer something visual so I put together a few simple charts in [Kibana](https://www.elastic.co/products/kibana).
 
 Below you'll see a screenshot of the charts I put together. The cool thing is, that I can apply filters and searches at the top of the dashboard and it will affect all the charts.
-![Unfiltered Dashboard](/img/kibana-1.png "Unfiltered Dashboard")
 
-This lets me do cool things, like look at commits by Ben Halpern in the last 90 days that involve "tags":
+![Unfiltered dashboard](/img/kibana-1.png "Unfiltered dashboard")
+
+This lets me do cool things, like look at commits by Ben Halpern in the last 90 days that involve "tags". I'm being lazy, so anything text fields that contain "tags" will match this filter, but I was pretty happy with the results, shown below:
 
 ![Dashboard of commits by Ben Halpern in the last 90 days, about "tags"](/img/kibana-2.png "Dashboard of commits by Ben Halpern in the last 90 days, about \"tags\"")
 
 Pretty cool right?
 
-What would it look like if you analyzed your projects with Elasticsearch?
-What types of questions would you like to answer?
+## Conclusion
+Eventually I'd like to take some time to clean-up the import process so it's easier to run, but for now I'm going to take some time exploring a couple of my own projects to see what  I can dig up.
+
+I do have some questions for you though:
+* What would it look like if you analyzed your projects with Elasticsearch?
+* What other types of analysis would you like to see?
