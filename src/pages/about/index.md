@@ -1,17 +1,17 @@
 ---
 templateKey: about-page
-title: About Search Better
+title: About Analytics.CodingBlocks.Net
 ---
 ![Headshot of the handsome Joe Zack](/img/podcast-face.png "It's a me, Joe Zack!")
 
-I am [Joe Zack](http://joezack.com), a long time software engineer and a host of the [Coding Blocks](https://www.codingblocks.net) podcast.
+Hey, [Joe](http://joezack.com) from  [Coding Blocks](https://www.codingblocks.net) here talking to you today about Analytics.CodingBlocks.Net.
 
 ### I'm great at parties
 
-I simply can't stop talking about the things I love, which includes search engines. In fact, I love search engines so much that Coding Blocks spun this site up for me so I can keep creating search focused content without overwhelming the main feed.
-
-I'd love to hear any feedback you have for me over on [Twitter](https://twitter.com/THEjoezack).
+I simply can't stop talking about the things I love, that's why I [podcast about code](https://www.codingblocks.net)! I also love logging, analytics, and all manner of polyglot persistnace. In fact, I love it so much that Coding Blocks spun this site up so I can keep jabbering on about this stuff without overwhelming the main feed.
 
 ## Oh yeah, about the site
 
-SearchBetter.dev is dedicated to bringing you dev-centered content all about search engines like Elasticsearch.
+Analytics.CodingBlocks.Net is dedicated to bringing you tips, how-to's and other content about Logging, Analytics, and Polyglot Persistence.
+
+I'd love to hear any feedback you have for me over on [Twitter](https://twitter.com/THEjoezack) or at the [mothership](https://twitter.com/codingblocks).
