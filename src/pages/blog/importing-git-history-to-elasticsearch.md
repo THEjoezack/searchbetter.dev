@@ -60,7 +60,7 @@ This script will upload your file to Elasticsearch:
 ./import.sh
 ```
 
-A copy of the fully formatted finaljson.json file has been gernated, but as long as everything has 
+A copy of the fully formatted finaljson.json file has been generated, which is useful for debugging.
 
 Here's a link to documentation for quickly spinning up an Elastic Stack cluster:
 https://searchbetter.dev/blog/quickstart-guide-elastic-stack-for-devs/
@@ -71,7 +71,7 @@ rm history.txt files.txt finaljson.json
 
 ## 5. Have fun!
 
-Here are a couple ideas on what you migh query now with Elastic. tay tuned for my next blog post and I'll show you how to answer all of these questions and more about one of my favorite sites: [dev.to](https://dev.to/)
+Here are a couple ideas on what you might query now with Elastic. tay tuned for my next blog post and I'll show you how to answer all of these questions and more about one of my favorite sites: [dev.to](https://dev.to/)
 
 * What files are changed the most often?
 * Who are the most active authors?
