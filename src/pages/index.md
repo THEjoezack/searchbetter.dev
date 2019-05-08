@@ -1,13 +1,13 @@
 ---
 templateKey: index-page
-title: Search Better!
+title: Analytics.CodingBlocks.Net
 image: /img/hero-background.jpg
-subheading: Mastering the API, one blog at a time
+subheading: 'Better Searching, Logging and Analytics'
 mainpitch:
   title: All about the Elasticsearch API
   description: >-
-    Write queries quickly, that run quickly? Sling advanced filtering, aggregation,
-    and scripting queries like a modern day Merlin? 
+    Write queries quickly, that run quickly? Sling advanced filtering,
+    aggregation, and scripting queries like a modern day Merlin? 
 heading: You've come to the right place!
 description: 'Stay tuned for Elastic tips, tricks and how-to''s.'
 intro:
@@ -22,10 +22,8 @@ intro:
       text: 'Uh, I ran out of things to say for now. Check back later!'
   heading: Blog
   description: >
-    Kaldi is the ultimate spot for coffee lovers who want to learn about their
-    java’s origin and support the farmers that grew it. We take coffee
-    production, roasting and brewing seriously and we’re glad to pass that
-    knowledge to anyone. This is an edit via identity...
+    Analytics.CodingBlocks.Net is a collection of Elasticsearch Tips, Tricks and
+    How-To content.
 main:
   heading: Great coffee with no compromises
   description: >

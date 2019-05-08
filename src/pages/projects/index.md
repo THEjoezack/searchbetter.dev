@@ -1,30 +1,30 @@
 ---
 templateKey: projects-page
 title: Projects
-image: /img/jumbotron.jpg
+image: /img/anthony-martino-335460-unsplash.jpg
 heading: Search based Projects
 description: >-
   Check out some of the search based projects I've had the pleasure to be a part
   of.
 intro:
   blurbs:
-    - image: /img/coffee.png
+    - image: /img/qit.png
       text: >-
         QIT.cloud is a programmer focused podcast discovery service that lets
         you search, queue, and play episodes by topic.
-    - image: /img/coffee-gear.png
+    - image: /img/devpodcasts.png
       text: >-
         DevPodcasts.App is another podcast discovery service, but this one is
         geared more towards helping people find podcasts (as opposed to
         episodes) by topic.
-    - image: /img/tutorials.png
+    - image: /img/findtechevents.png
       text: >-
         FindTech.events is a developer conference discovery service. It's still
         in it's early days, but the idea is that you will be able to search for
         conferences by topic, date, location, and whether or not the conference
         is currently accepting call-for-proposals.
-    - image: /img/meeting-space.png
-      text: >
+    - image: /img/searchbetter.png
+      text: |
         SearchBetter.dev - uh, guess this is kinda self explanitory!
   heading: Open Source Projects
   description: Read more about some of our open source projects.

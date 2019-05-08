@@ -12,6 +12,8 @@ tags:
   - Logstash
   - Docker
 ---
+[![Watch the corresponding video](https://img.youtube.com/vi/Zaqe5rFtma4/0.jpg)](https://www.youtube.com/watch?v=Zaqe5rFtma4)
+
 ## About the Elastic Stack
 
 Elasticsearch is an open-source, scalable, full-text search and analytics engine. It is used for a variety of purposes, from [Full Text Search, to E-Commerce, to Real-Time Analytics](https://searchbetter.dev/blog/elasticsearch-is-not-just-for-search/). It is frequently associated with big organizations and big data, but Elastic did a great job with their default configurations so it's easy for smaller projects as well.
@@ -198,3 +200,7 @@ Here are a couple suggestions for what to do now that you've got Elastic Stack u
 * Explore the [Search](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html) and [Aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html)
    APIs
 * [Create visualizations with Kibana](https://www.elastic.co/guide/en/kibana/current/visualize.html)
+
+## Troubleshooting: (Huge thanks to [Dave Follett](https://dev.to/davefollett) for the help!)
+* Running on linux, and the Elasticsearch container keeps crashing? Your vm.max_map_count might be too low. Check this out for an explanation / fix: https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html
+* Having trouble with containers? "docker logs" and "docker inspect" are your friends. You can run a command like this in order to see where all the elasticsearch files are on disk: "docker inspect $(docker ps -f name=elasticsearch -aq)"
