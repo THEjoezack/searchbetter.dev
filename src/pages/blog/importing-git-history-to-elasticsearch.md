@@ -71,7 +71,7 @@ rm history.txt files.txt finaljson.json
 
 ## 5. Have fun!
 
-Here are a couple ideas on what you might query now with Elastic. tay tuned for my next blog post and I'll show you how to answer all of these questions and more about one of my favorite sites: [dev.to](https://dev.to/)
+Here are a couple ideas on what you might query now with Elastic. Stay tuned for my next blog post and I'll show you how to answer all of these questions and more about one of my favorite sites: [dev.to](https://dev.to/)
 
 * What files are changed the most often?
 * Who are the most active authors?
