@@ -11,7 +11,9 @@ const VideoGrid = ({ gridItems }) => (
             <PreviewCompatibleImage imageInfo={item} />
           </a>
         </div>
-        <a href={item.videoId}>{item.title}</a>
+        <a href={`https://www.youtube.com/watch?v=${item.videoId}`}>
+          {item.title}
+        </a>
       </div>
     ))}
   </div>

@@ -1,4 +1,5 @@
-var proxy = require('http-proxy-middleware')
+const proxy = require('http-proxy-middleware')
+const youtubeApiKey = process.env.REACT_YOUTUBE_API_KEY
 
 module.exports = {
   siteMetadata: {
@@ -34,7 +35,7 @@ module.exports = {
       resolve: `gatsby-source-youtube-v2`,
       options: {
         channelId: 'UCuhHLykoneeYM_qxReRpuJA',
-        apiKey: 'AIzaSyDZboYjQwTnR4mp6h3lN0iF4B5xCOaoYNQ',
+        apiKey: youtubeApiKey,
         maxVideos: 50 // Defaults to 50
       }
     },
