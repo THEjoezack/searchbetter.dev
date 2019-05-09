@@ -25,7 +25,7 @@ intro:
         is currently accepting call-for-proposals.
     - image: /img/searchbetter.png
       text: |
-        SearchBetter.dev - uh, guess this is kinda self explanitory!
+        Analytics.CodingBlocks.Net - Tips, tricks and the developer perspective on logging and analytics.
   heading: Open Source Projects
   description: Read more about some of our open source projects.
 main:

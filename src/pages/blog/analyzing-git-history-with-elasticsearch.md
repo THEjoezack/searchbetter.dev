@@ -11,7 +11,7 @@ tags:
   - git
   - datavis
 ---
-Importing Git History into Elasticsearch is a [not very much fun](https://searchbetter.dev/blog/importing-git-history-to-elasticsearch/) thanks to the lack of git formatting options, but it's cool once you get it working!
+Importing Git History into Elasticsearch is a [not very much fun](https://analytics.codingblocks.net/blog/importing-git-history-to-elasticsearch/) thanks to the lack of git formatting options, but it's cool once you get it working!
 
 Each commit has 22 data points, including a one-to-many list of changed files. 
 

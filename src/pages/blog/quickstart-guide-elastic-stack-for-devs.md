@@ -16,7 +16,7 @@ tags:
 
 ## About the Elastic Stack
 
-Elasticsearch is an open-source, scalable, full-text search and analytics engine. It is used for a variety of purposes, from [Full Text Search, to E-Commerce, to Real-Time Analytics](https://searchbetter.dev/blog/elasticsearch-is-not-just-for-search/). It is frequently associated with big organizations and big data, but Elastic did a great job with their default configurations so it's easy for smaller projects as well.
+Elasticsearch is an open-source, scalable, full-text search and analytics engine. It is used for a variety of purposes, from [Full Text Search, to E-Commerce, to Real-Time Analytics](https://analytics.codingblocks.net/blog/elasticsearch-is-not-just-for-search/). It is frequently associated with big organizations and big data, but Elastic did a great job with their default configurations so it's easy for smaller projects as well.
 
 ![Screenshot of Elastic Stack with developer blog data](/img/elasticsearch-quickstart-complete.png "The results: Elastic Stack running with dev blog data")
 
