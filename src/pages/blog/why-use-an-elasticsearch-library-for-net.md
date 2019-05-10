@@ -44,7 +44,7 @@ Now we're ready, so let's go back to our original question:
 Because strongly typed libraries...
 
 1. Protect you from generating most invalid requests at compile-time
-2. Provide [IDEs](https://en.wikipedia.org/wiki/Integrated_development_environment) like Visual Studio and Code everything they need to offer [code completion](https://en.wikipedia.org/wiki/Intelligent_code_completion)
+2. Give [IDEs](https://en.wikipedia.org/wiki/Integrated_development_environment) like Visual Studio and Code everything they need to offer [code completion](https://en.wikipedia.org/wiki/Intelligent_code_completion)
 
 You may decide that these benefits aren't worth it for your organization, but I hope you consider them!
 
