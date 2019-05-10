@@ -12,9 +12,11 @@ tags:
 ---
 ![Pedestrian risking their life by ignoring a guard rail](/img/aravind-kumar-732657-unsplash.jpg "This pic makes me nervous!")
 
-Elasticsearch offers a comprehensive [REST API](https://en.wikipedia.org/wiki/Representational_state_transfer) that gives you complete control over your documents and indices. Most (all?) modern languages provide an easy way to interact with REST API, so why bother taking on a 3rd party library like [NEST](https://github.com/elastic/elasticsearch-net)?
+Most modern languages provide an easy way to interact with REST APIs,and Elasticsearch already offers a robust REST API that does everything. A third party like [NEST](https://github.com/elastic/elasticsearch-net) adds a layer of abstraction that brings bugs, misses features and are awkward to maintain. They also extend your security footprint, adding another vector for a vulnerability.
 
-I can think of two reasons, but first a little bit about NEST.
+Why would you bother taking on a third party library like this? I can think of two reasons, but first a little bit about NEST.
+
+## About NEST
 
 NEST is the official Elasticsearch library for .NET, published by Elastic Company and open-sourced under the [Apache 2 license](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)) (that's one of the "good" ones.)
 
@@ -23,7 +25,9 @@ NEST provides a fluent interface that lets you build Elasticsearch requests by c
 NEST also provides a low-level client that you can use to send arbitrary requests to Elasticsearch in case you need to pass along requests generated outside of your system, so you aren't losing any capabilities.
 
 ### Sample query:
+
 Gets the top 10 Podcasts from "[Coding Blocks](https://www.codingblocks.net/)" or about "Elasticsearch"
+
 ```
 var response = client.Search<Podcast>(s => s
     .From(0)
@@ -49,6 +53,5 @@ Because strongly typed libraries...
 You may decide that these benefits aren't worth it for your organization, but I hope you consider them!
 
 - - -
-
 
 Photo by [Aravind Kumar](https://unsplash.com/photos/k9HBitO83mI)  on [Unsplash](https://unsplash.com/search/photos/guard-rails)
