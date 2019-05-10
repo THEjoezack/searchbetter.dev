@@ -20,6 +20,10 @@ NEST is the official Elasticsearch library for .NET, published by Elastic Compan
 
 NEST provides a fluent interface that lets you build Elasticsearch requests by chaining method calls together. The strongly typed library acts like guard rails, helping to prevent invalid requests and enabling development environments like Visual Studio and Visual Studio Code to provide code completion saves you typing and catches problems before you even compile your code.
 
+NEST also provides a low-level client that you can use to send arbitrary requests to Elasticsearch in case you need to pass along requests generated outside of your system, so you aren't losing any capabilities.
+
+### Sample query:
+Gets the top 10 Podcasts from "[Coding Blocks](https://www.codingblocks.net/)" or about "Elasticsearch"
 ```
 var response = client.Search<Podcast>(s => s
     .From(0)
@@ -32,9 +36,6 @@ var response = client.Search<Podcast>(s => s
     )
 );
 ```
-
-
-NEST also provides a low-level client that you can use to send arbitrary requests to Elasticsearch in case you need to pass along requests generated outside of your system, so you aren't losing any capabilities.
 
 Now we're ready, so let's go back to our original question:
 
