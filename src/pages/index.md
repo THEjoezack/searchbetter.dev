@@ -11,7 +11,9 @@ mainpitch:
 videopitch:
   title: Recent Videos
   description: >-
-    Check out our [YouTube](https://www.youtube.com/channel/UCuhHLykoneeYM_qxReRpuJA) channel for quick videos on Elasticsearch.
+    Check out our
+    [YouTube](https://www.youtube.com/channel/UCuhHLykoneeYM_qxReRpuJA) channel
+    for quick videos on Elasticsearch.
 heading: You've come to the right place!
 description: 'Stay tuned for Elastic tips, tricks and how-to''s.'
 intro:
