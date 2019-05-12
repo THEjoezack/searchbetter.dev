@@ -55,3 +55,5 @@ I'd like to get a video together on this, so stay tuned!
 Now that you've got a little web app set up, you can start having fun! Add search auto-complete, paging, charts, faceted navigation, make some dashboards in Kibana etc.
 
 I'll have some more info on this soon too, so stay in touch!
+
+Have any other suggestions? [Let me know](https://analytics.codingblocks.net/contact)!
