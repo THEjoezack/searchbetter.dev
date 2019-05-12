@@ -22,4 +22,4 @@ Eventually I would love to aggregate this data but in the meantime, you'll have 
 
 [Dev.To Tag](https://dev.to/t/elasticsearch)
 
-And [https://searchbetter.dev](this site), of course!
+And [https://analytics.codingblocks.net](this site), of course!

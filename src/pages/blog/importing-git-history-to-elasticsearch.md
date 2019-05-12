@@ -63,7 +63,7 @@ This script will upload your file to Elasticsearch:
 A copy of the fully formatted finaljson.json file has been generated, which is useful for debugging.
 
 Here's a link to documentation for quickly spinning up an Elastic Stack cluster:
-https://searchbetter.dev/blog/quickstart-guide-elastic-stack-for-devs/
+https://analytics.codingblocks.net/blog/quickstart-guide-elastic-stack-for-devs/
 
 ```bash
 rm history.txt files.txt finaljson.json
