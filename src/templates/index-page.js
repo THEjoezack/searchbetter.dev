@@ -14,6 +14,7 @@ export const IndexPageTemplate = ({
   subheading,
   mainpitch,
   description,
+  videopitch,
   videos,
   projects
 }) => (
@@ -85,10 +86,11 @@ export const IndexPageTemplate = ({
                 <div className='columns' style={{ padding: '60px 0 0 0' }}>
                   <div className='column is-12'>
                     <h3 className='has-text-weight-semibold is-size-2'>
-                      Featured videos
+                      {videopitch.title}
                     </h3>
                   </div>
                 </div>
+                <p>{videopitch.description}</p>
                 <Videos gridItems={videos} />
 
                 {/* <div className='columns'>
@@ -109,7 +111,7 @@ export const IndexPageTemplate = ({
                 <div className='columns' style={{ padding: '60px 0 0 0' }}>
                   <div className='column is-12'>
                     <h3 className='has-text-weight-semibold is-size-2'>Blog</h3>
-                    <BlogRoll />
+                    <BlogRoll limit={4} />
                     <div className='column is-12 has-text-centered'>
                       <Link className='btn' to='/blog'>
                         Read more
@@ -139,6 +141,7 @@ IndexPageTemplate.propTypes = {
   projects: PropTypes.shape({
     blurbs: PropTypes.array
   }),
+  videopitch: PropTypes.object,
   videos: PropTypes.array
 }
 
@@ -166,6 +169,7 @@ const IndexPage = ({ data }) => {
         description={indexFrontMatter.description}
         intro={indexFrontMatter.intro}
         projects={projectsFrontMatter.intro}
+        videopitch={indexFrontMatter.videopitch}
         videos={videos}
       />
     </Layout>
@@ -200,6 +204,10 @@ export const pageQuery = graphql`
         heading
         subheading
         mainpitch {
+          title
+          description
+        }
+        videopitch {
           title
           description
         }

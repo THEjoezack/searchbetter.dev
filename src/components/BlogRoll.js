@@ -26,7 +26,7 @@ class BlogRoll extends React.Component {
                   </span>
                 </p>
                 <p>
-                  {post.excerpt}
+                  {post.frontmatter.description}
                   <br />
                   <br />
                   <Link className='button' to={post.fields.slug}>
@@ -46,16 +46,18 @@ BlogRoll.propTypes = {
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array
     })
-  })
+  }),
+  limit: PropTypes.number
 }
 
 export default () => (
   <StaticQuery
     query={graphql`
-      query BlogRollQuery {
+      query BlogRollQuery($limit: Int) {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
           filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+          limit: $limit
         ) {
           edges {
             node {
@@ -66,6 +68,7 @@ export default () => (
               }
               frontmatter {
                 title
+                description
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
               }
