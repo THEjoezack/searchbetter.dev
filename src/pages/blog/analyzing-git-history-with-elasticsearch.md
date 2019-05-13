@@ -13,6 +13,10 @@ tags:
 ---
 Importing Git History into Elasticsearch is a [not very much fun](https://analytics.codingblocks.net/blog/importing-git-history-to-elasticsearch/) thanks to the lack of git formatting options, but it's cool once you get it working!
 
+*Check out the video showing the results!*
+
+[![Check out the video showing the results of analyzing git history with Elasticsearch!](https://img.youtube.com/vi/ejeHzxOBiOQ/0.jpg)](https://www.youtube.com/watch?v=ejeHzxOBiOQ)
+
 Each commit has 22 data points, including a one-to-many list of changed files. 
 
 I imported the git history from [dev.to](https://github.com/thepracticaldev/dev.to) to see how things looked.

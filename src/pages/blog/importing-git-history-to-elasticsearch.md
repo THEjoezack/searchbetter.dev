@@ -77,6 +77,10 @@ Here are a couple ideas on what you might query now with Elastic. Stay tuned for
 * Who are the most active authors?
 * What time of day is the most committed?
 
+*Check out the video showing the results!*
+
+[![Check out the video showing the results of analyzing git history with Elasticsearch!](https://img.youtube.com/vi/ejeHzxOBiOQ/0.jpg)](https://www.youtube.com/watch?v=ejeHzxOBiOQ)
+
 - - -
 
 #### Troubleshooting:
